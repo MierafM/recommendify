@@ -1,0 +1,11 @@
+.headerContainer{
+  background-color: #9D8BF9;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+}
+.headerSearch{
+  display: flex;
+
+}

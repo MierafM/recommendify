@@ -1,0 +1,17 @@
+.songTileContainer{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: #FF7800;
+  padding: 0.5em 1em;
+
+}
+.songImage{
+  width: 10em;
+  height: 10em;
+}
+.songInfoContainer{
+  display:flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}

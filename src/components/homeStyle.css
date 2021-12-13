@@ -1,0 +1,17 @@
+.homeContainer{
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #97BFB4;
+
+}
+.tracksContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+
+}
+.sectionHeading{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;;
+}
