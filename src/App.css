@@ -7,7 +7,7 @@
   display: flex;
   flex-flow: column;
   /*just to see pink */
-  background-color: #F999B7;
+  background-color: black;
 }
 .loginContainer{
   display: flex;
@@ -16,6 +16,6 @@
   justify-content: center;
   height: 100%;
   /*yellow*/
-  background-color: #EBE645;
+  background-color: white;
 
 }

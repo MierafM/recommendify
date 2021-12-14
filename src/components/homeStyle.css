@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 .homeContainer{
   display: flex;
   flex-flow: column nowrap;
-  background-color: #97BFB4;
+  background-color: white;
+
 
 }
 .tracksContainer{
@@ -13,5 +15,37 @@
 .sectionHeading{
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;;
+  justify-content: space-between;
+  margin: 1vh 1vw;
+  font-family: 'Lato', sans-serif;
+  font-size: 3vh;
+}
+.greeting{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 3vh;
+  margin: 1vh 1vw;
+  color: black;
+}
+hr{
+  border-top: 1px solid black;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.usersTracks{
+  margin: 1vh 0vh;
+}
+.moreBtn{
+
+  border: 1px solid black;
+
+  background-color: white;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+}.moreBtn:hover{
+  background-color: black;
+  color: white;
+
 }

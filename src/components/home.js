@@ -49,21 +49,21 @@ class Home extends Component{
     return(
       <div className="homeContainer">
         <Header/>
-        <div>
+
+        <div className="welcomeBox">
         {this.state.userName ?
-          <p>Welcome {this.state.userName}!</p>
+          <span className="greeting">Welcome {this.state.userName}</span>
           :
           <p>Loading ...</p>
         }
         </div>
 
-        <div>
+        <div className="usersTracks">
           {this.state.topTracks ?
             <div>
               <div className="sectionHeading">
-                <span>top tracks</span>
-                <button>more</button>
-
+                <span>Your Top Tracks</span>
+                <button className="moreBtn">more</button>
               </div>
               <hr/>
               <div className="tracksContainer">
@@ -78,8 +78,8 @@ class Home extends Component{
           {this.state.recentlyPlayedTracks ?
             <div>
               <div className="sectionHeading">
-                <span>recently played</span>
-                <button>more</button>
+                <span>Your Recently Played</span>
+                <button className="moreBtn">more</button>
               </div>
               <hr/>
               <div className="tracksContainer">
@@ -94,8 +94,8 @@ class Home extends Component{
           {this.state.savedTracks ?
             <div>
               <div className="sectionHeading">
-                <span>saved tracks</span>
-                <button>more</button>
+                <span>Your Saved Tracks</span>
+                <button className="moreBtn">more</button>
               </div>
               <hr/>
               <div className="tracksContainer">

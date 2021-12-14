@@ -10,10 +10,10 @@ class Header extends Component{
   render(){
     return(
       <div className="headerContainer">
-        <span>Recommendify</span>
+        <span className="appName">Recommendify</span>
         <div className="headerSearch">
-          <input type="text"/>
-          <button>Search</button>
+          <input className="inputBox" type="text"/>
+          <button className="inputBtn">Search</button>
         </div>
       </div>
     )}}

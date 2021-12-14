@@ -2,16 +2,37 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  background-color: #FF7800;
-  padding: 0.5em 1em;
+  background-color: white;
+  padding: 0.5vh 1vw;
+  width:13vw;
+  border: 1px solid black;
 
 }
 .songImage{
-  width: 10em;
-  height: 10em;
+  width: 11vw;
+  height: 11vw;
+}
+.imageContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 .songInfoContainer{
   display:flex;
   flex-flow: column nowrap;
   align-items: center;
+}
+.title{
+  font-size: 1.4vw;
+  text-align: center;
+}
+.artists{
+  display:flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.artist{
+  font-size: 1.2vw;
+  text-align: center;
 }

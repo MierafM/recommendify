@@ -1,6 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,900;1,900&display=swap');
+
 .footerContainer{
-  background-color: #998CEB;
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  padding: 1vh 1vw;
+
+}
+a{
+  text-decoration: none;
+  color: white;
+  padding: 0px;
+}
+a:visited{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  text-decoration: underline;
 }

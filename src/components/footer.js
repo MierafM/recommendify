@@ -10,7 +10,9 @@ class Footer extends Component{
   render(){
     return(
       <div className="footerContainer">
-        <span>Recommendify built by Mieraf M</span>
+      <a href="https://mierafm.github.io/Portfolio">
+        <span>Built By Mieraf M</span>
+        </a>
       </div>
     )}}
 
