@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
 import { SpotifyAuth, Scopes } from 'react-spotify-auth';
 import { SpotifyApiContext } from 'react-spotify-api';
+import { useHistory } from "react-router-dom";
 import Cookies from 'js-cookie';
 import queryString from 'query-string';
 import 'react-spotify-auth/dist/index.css'
 import Home from './components/home.js';
+import Controller from './components/controller';
 import logo from './logo.svg';
 import './App.css';
 
 const App = () => {
     const [token, setToken] = React.useState(Cookies.get("spotifyAuthToken"));
-
+    const history = useHistory();
     return (
       <div className="appContainer">
       {token ? (
+        //issue when trying to change this to controller
+        //<Controller props={token}/>
+
         <Home token={token}/>
       ) :(
         <div className="loginContainer">
           <div>
-            <p>not logged in. log in for recommendations</p>
+            <p>logging in required to use Recommendify</p>
           </div>
           <div>
             <SpotifyAuth

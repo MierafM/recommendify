@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header';
 import SongTile from './songTile';
+import UsersTracks from './usersTracks';
 import Footer from './footer';
 import './homeStyle.css';
 
@@ -63,7 +64,7 @@ class Home extends Component{
             <div>
               <div className="sectionHeading">
                 <span>Your Top Tracks</span>
-                <button className="moreBtn">more</button>
+                <a className="moreBtn" href='top-tracks'>more</a>
               </div>
               <hr/>
               <div className="tracksContainer">
@@ -79,7 +80,8 @@ class Home extends Component{
             <div>
               <div className="sectionHeading">
                 <span>Your Recently Played</span>
-                <button className="moreBtn">more</button>
+                <a className="moreBtn" href='recently-played'>more</a>
+
               </div>
               <hr/>
               <div className="tracksContainer">
@@ -95,7 +97,8 @@ class Home extends Component{
             <div>
               <div className="sectionHeading">
                 <span>Your Saved Tracks</span>
-                <button className="moreBtn">more</button>
+                <a className="moreBtn" href='saved-tracks'>more</a>
+                
               </div>
               <hr/>
               <div className="tracksContainer">

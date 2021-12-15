@@ -38,14 +38,19 @@ hr{
   margin: 1vh 0vh;
 }
 .moreBtn{
-
   border: 1px solid black;
-
   background-color: white;
-  cursor: pointer;
+  color: black;
   font-family: 'Lato', sans-serif;
-}.moreBtn:hover{
+  font-size: 2vh;
+  padding: 0.5vh 0.5vw;
+}
+.moreBtn:hover{
+  border: 1px solid white;
   background-color: black;
   color: white;
 
+}
+.moreBtn:visited{
+  color: black;
 }
