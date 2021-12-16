@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { SpotifyAuth, Scopes } from 'react-spotify-auth';
 import { SpotifyApiContext } from 'react-spotify-api';
-import { useHistory } from "react-router-dom";
+
 import Cookies from 'js-cookie';
 import queryString from 'query-string';
 import 'react-spotify-auth/dist/index.css'
@@ -12,7 +12,7 @@ import './App.css';
 
 const App = () => {
     const [token, setToken] = React.useState(Cookies.get("spotifyAuthToken"));
-    const history = useHistory();
+
     return (
       <div className="appContainer">
       {token ? (
