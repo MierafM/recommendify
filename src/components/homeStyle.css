@@ -16,9 +16,10 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
   margin: 1vh 1vw;
   font-family: 'Lato', sans-serif;
-  font-size: 3vh;
+  font-size: 2.2vw;
 }
 .greeting{
   display: flex;
@@ -53,4 +54,7 @@ hr{
 }
 .moreBtn:visited{
   color: black;
+}
+.moreBtn:visited:hover{
+  color: white;
 }

@@ -27,6 +27,10 @@
 .title{
   font-size: 1.4vw;
   text-align: center;
+  color: black;
+}
+.title:visited{
+  color: black;
 }
 .artists{
   display:flex;

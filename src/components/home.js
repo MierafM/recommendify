@@ -19,7 +19,7 @@ class Home extends Component{
         userName: data.display_name
       })
     )
-    console.log(this.props.token)
+    
     fetch('https://api.spotify.com/v1/me/top/tracks?'+'limit='+6,   {
       headers: {'Authorization': 'Bearer ' + this.props.token}
     }).then(response => response.json()).then(data =>
@@ -41,12 +41,12 @@ class Home extends Component{
         savedTracks: data.items
       }))
 
-    console.log('done fetching', this.state)
+
 
   }
 
   render(){
-    console.log("prop", this.state)
+
     return(
       <div className="homeContainer">
         <Header/>
@@ -98,7 +98,7 @@ class Home extends Component{
               <div className="sectionHeading">
                 <span>Your Saved Tracks</span>
                 <a className="moreBtn" href='saved-tracks'>more</a>
-                
+
               </div>
               <hr/>
               <div className="tracksContainer">

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+.aboutTrack{
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 1vh 1vw;
+  padding: 1vh 1vw;
+  border: 1px solid black;
+  justify-content:space-around;
+}
+.trackInfo{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.trackIMG{
+  width: 20vmax;
+  height: 20vmax;
+  margin: 1vh 1vw;
+
+}
+.trackName{
+  font-family: 'Lato', sans-serif;
+  font-size: 2vmax;
+  text-align: center;
+}
+.trackArtists{
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5vmax;
+}
+.trackDetails{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.featuresTitle{
+  font-family: 'Lato', sans-serif;
+  font-size: 2vmax;
+  text-align: center;
+}
+.trackFeatures{
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2vmax;
+  margin: 1vmax;
+}
+.allFeatures{
+  display: flex;
+  flex-flow: column wrap;
+  margin: 1vmax;
+}
+.recommendedTiles{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.recommendationSection{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
