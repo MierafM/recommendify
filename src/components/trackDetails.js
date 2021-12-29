@@ -12,58 +12,97 @@ class TrackDetails extends Component{
   constructor() {
     super();
     this.state = {}
-    this.handlecalcScore = this.handlecalcScore.bind(this);
+
 
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+
     const token = Cookies.get("spotifyAuthToken");
-    console.log('token ', token);
+    //console.log('token ', token);
     let trackID = window.location.pathname.split('/')[2]
-    console.log('curr trackID',trackID);
-    fetch('https://api.spotify.com/v1/tracks/'+trackID, {
+    //console.log('curr trackID',trackID);
+
+    const track = await fetch('https://api.spotify.com/v1/tracks/'+trackID, {
       headers: {'Authorization': 'Bearer ' + token}
-    }).then(response => response.json()).then(data =>
-      this.setState({
-        track:data
-      })
-    )
-    fetch('https://api.spotify.com/v1/audio-features/'+trackID, {
+    }).then(response => response.json())
+    this.setState({
+      track: track
+    })
+
+    const features = await fetch('https://api.spotify.com/v1/audio-features/'+trackID, {
       headers: {'Authorization': 'Bearer ' + token}
-    }).then(response => response.json()).then(data =>
-      fetch('https://api.spotify.com/v1/recommendations?seed_tracks='+data.id+
-      '&limit=100'
-      +'&target_acousticness='+data.acousticness
-      +'&min_acousticness='+(data.acousticness-0.2)
-      +'&max_acousticness='+(data.acousticness+0.2)
-      +'&target_danceability='+data.danceability
-      +'&min_danceability='+(data.danceability-0.2)
-      +'&max_danceability='+(data.danceability+0.2)
-      +'&target_energy='+data.energy
-      +'&min_energy='+(data.energy-0.2)
-      +'&max_energy='+(data.energy+0.2)
-      +'&target_instrumentalness='+data.instrumentalness
-      +'&min_instrumentalness='+(data.instrumentalnes-0.2)
-      +'&max_instrumentalness='+(data.instrumentalness+0.2)
-      +'&target_key='+data.key
-      +'&target_loudness='+data.loudness
-      +'&target_mode='+data.mode
-      +'&target_speechiness='+data.speechiness
-      +'&min_speechiness='+(data.speechiness-0.2)
-      +'&max_speechiness='+(data.speechiness+0.2)
-      +'&target_tempo='+data.tempo
-      +'&min_tempo='+(data.tempo-20)
-      +'&max_tempo='+(data.tempo+20)
-      +'&target_valence='+data.valence
-      +'&min_valence='+(data.valence-0.2)
-      +'&max_valence='+(data.valence+0.2)
+    }).then(response => response.json())
+    this.setState({
+      features: features
+    })
+
+    const recs = await fetch('https://api.spotify.com/v1/recommendations?seed_tracks='+this.state.track.id+'&limit=100'
+      //mood (Danceability, Valence, Energy, Tempo): most important aspect: provide max and min
+      +'&target_danceability='+features.danceability
+      +'&min_danceability='+(features.danceability-0.2)
+      +'&max_danceability='+(features.danceability+0.2)
+
+      +'&target_valence='+features.valence
+      +'&min_valence='+(features.valence-0.2)
+      +'&max_valence='+(features.valence+0.2)
+
+      +'&target_energy='+features.energy
+      +'&min_energy='+(features.energy-0.2)
+      +'&max_energy='+(features.energy+0.2)
+
+      +'&target_tempo='+features.tempo
+      +'&min_tempo='+(features.tempo-10)
+      +'&max_tempo='+(features.tempo+10)
+
+      //properties (Loudness, Speechiness, Instrumentalness) and context (Liveness, Acousticness) : secondary, just provide target
+      +'&target_loudness='+features.loudness
+      +'&target_speechiness='+features.speechiness
+      +'&target_instrumentalness='+features.instrumentalness
+
+      +'&target_acousticness='+features.acousticness
+      +'&target_liveness='+features.liveness
+      //segements: to be added in the future after research
       , {
           headers: {'Authorization': 'Bearer ' + token}
-      }).then(response => response.json()).then(data2 =>
-        this.setState({
-          recommendations:data2})).then(this.setState({
-            features:data
-          })))
+      }).then(response => response.json())
+      this.setState({
+        recommendations: recs.tracks
+      })
+    console.log(this.state);
+    let count = 0
+    let errors = []
+    for (let song of this.state.recommendations){
+
+      const songDetail = await fetch('https://api.spotify.com/v1/audio-features/'+song.id, {
+        headers: {'Authorization': 'Bearer ' + token}
+      }).then(response => response.json())
+      let diff = 0
+      diff += Math.abs(this.state.features.danceability-songDetail.danceability)/Math.abs(this.state.features.danceability)
+
+      diff += Math.abs(this.state.features.energy-songDetail.energy)/Math.abs(this.state.features.energy)
+      //instrumentalness not working
+
+      diff += Math.abs(this.state.features.liveness-songDetail.liveness)/Math.abs(this.state.features.liveness)
+      diff += Math.abs(this.state.features.loudness-songDetail.loudness)/Math.abs(this.state.features.loudness)
+
+      diff += Math.abs(this.state.features.speechiness-songDetail.speechiness)/Math.abs(this.state.features.speechiness)
+
+      diff += Math.abs(this.state.features.tempo-songDetail.tempo)/Math.abs(this.state.features.tempo)
+
+      diff += Math.abs(this.state.features.valence-songDetail.valence)/Math.abs(this.state.features.valence)
+      console.log('song: ', song, 'detail', songDetail, 'diff', diff)
+
+      errors.push(diff)
+
+
+
+    }
+    console.log(errors);
+    this.setState({
+      errors: errors
+    })
+
   }
   handlecalcScore(event){
     /*
@@ -74,7 +113,8 @@ class TrackDetails extends Component{
   }
 
   render(){
-    console.log('this', this.state);
+    const token = Cookies.get("spotifyAuthToken");
+    //console.log('this', this.state);
     this.handlecalcScore()
     return(
         <div className="trackDetailsContainer">
@@ -109,11 +149,13 @@ class TrackDetails extends Component{
         }
         <div className="recommendationSection">
           <span className="recHeader">Recommendations</span>
-          {this.state.recommendations ?
+          {this.state.recommendations && this.state.errors ?
             <div className="recommendedTiles">
-              {this.state.recommendations.tracks.map(song =>
-              <SongTile song={song} seed={this.state.features}/>
+              {this.state.recommendations.map((song, index) =>
+                <SongTile song={song} error={this.state.errors[index]} />
               )}
+
+
             </div>
             :
             <span>Loading recommendations ... </span>
