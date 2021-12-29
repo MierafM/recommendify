@@ -19,6 +19,34 @@
   justify-content: center;
 
 }
+.audioContainer{
+  display: flex;
+  align-items: center;
+
+}
+.hp_slide{
+    width:11vw;
+    background:gray;
+    height:0.5vh;
+}
+.hp_range{
+    width:0;
+    background:black;
+    height:25px;
+}
+
+/* Removes the time stamp */
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-timeline-container,
+audio::-webkit-media-controls-volume-slider-container,
+audio::-webkit-media-controls-volume-slider{
+  display: none;
+}
+
+
+
 .songInfoContainer{
   display:flex;
   flex-flow: column nowrap;
