@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,900;1,900&display=swap');
-.headerContainer{
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,900;1,900&display=swap");
+.headerContainer {
   background-color: black;
   display: flex;
   flex-flow: row wrap;
@@ -9,42 +9,38 @@
   align-items: center;
 }
 
-.appName{
+.appName {
   color: white;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 900;
   font-size: 5vh;
   padding: 1vh 0vw;
 }
-.headerSearch{
+.headerSearch {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   padding: 0 1vw;
-
-
 }
-.inputBox{
+.inputBox {
   border: none;
   border-bottom: 2px solid black;
   padding: 1vh 1vw;
-
 }
-.inputBox:focus{
+.inputBox:focus {
   outline: none;
 }
 
-.inputBtn{
-
+.inputBtn {
   border: 1px solid black;
   padding: 3%;
   margin: 1vw 1vh;
   background-color: white;
   cursor: pointer;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
-.inputBtn:hover{
+.inputBtn:hover {
   background-color: black;
   color: white;
   border-color: white;

@@ -1,71 +1,43 @@
-# Getting Started with Create React App
+# Recommendify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Visit Project at: https://recommendify-app.herokuapp.com/
+A Spotify-powered music recommendation app. Connect your Spotify account to view your top tracks, recently played, and saved songs — then dive into any track to get personalized recommendations based on its audio features.
+
+## Setup
+
+1. **Clone the repo and install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Create a `.env.local` file** at the project root:
+   ```bash
+   VITE_SPOTIFY_CLIENT_ID=your_spotify_client_id_here
+   ```
+   Get your client ID from the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard). Set the redirect URI to `http://localhost:5173` for local development.
 
 ## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `npm run dev`
+Starts the development server at [http://localhost:5173](http://localhost:5173).
 
 ### `npm run build`
+Builds the app for production into the `dist/` folder.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `npm run preview`
+Previews the production build locally.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React 17
+- Vite
+- React Router v6
+- Spotify Web API
 
-### `npm run eject`
+## Deploying to Vercel
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Push the repo to GitHub
+2. Import the project at [vercel.com](https://vercel.com)
+3. Add `VITE_SPOTIFY_CLIENT_ID` as an environment variable in the Vercel dashboard
+4. Update the redirect URI in your Spotify app settings to your Vercel deployment URL
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Built by [Mieraf M](https://mierafm.github.io/Portfolio)

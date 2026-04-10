@@ -1,38 +1,35 @@
-.songTileContainer{
+.songTileContainer {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   background-color: white;
   padding: 0.5vh 1vw;
-  width:13vw;
+  width: 13vw;
   border: 1px solid black;
   margin: 1vh 1vw;
-
 }
-.songImage{
+.songImage {
   width: 11vw;
   height: 11vw;
 }
-.imageContainer{
+.imageContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
-.audioContainer{
+.audioContainer {
   display: flex;
   align-items: center;
-
 }
-.hp_slide{
-    width:11vw;
-    background:gray;
-    height:0.5vh;
+.hp_slide {
+  width: 11vw;
+  background: gray;
+  height: 0.5vh;
 }
-.hp_range{
-    width:0;
-    background:black;
-    height:25px;
+.hp_range {
+  width: 0;
+  background: black;
+  height: 25px;
 }
 
 /* Removes the time stamp */
@@ -41,31 +38,29 @@ audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display,
 audio::-webkit-media-controls-timeline-container,
 audio::-webkit-media-controls-volume-slider-container,
-audio::-webkit-media-controls-volume-slider{
+audio::-webkit-media-controls-volume-slider {
   display: none;
 }
 
-
-
-.songInfoContainer{
-  display:flex;
+.songInfoContainer {
+  display: flex;
   flex-flow: column nowrap;
   align-items: center;
 }
-.title{
+.title {
   font-size: 1.4vw;
   text-align: center;
   color: black;
 }
-.title:visited{
+.title:visited {
   color: black;
 }
-.artists{
-  display:flex;
+.artists {
+  display: flex;
   flex-flow: column nowrap;
   align-items: center;
 }
-.artist{
+.artist {
   font-size: 1.2vw;
   text-align: center;
 }

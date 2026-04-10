@@ -1,19 +1,16 @@
-import React from 'react';
-import  { Component } from 'react';
-import './footerStyle.css';
+import React, { Component } from "react";
+import "./footerStyle.css";
 
-class Footer extends Component{
-  constructor() {
-    super();
-    this.state = {}
-  }
-  render(){
-    return(
+class Footer extends Component {
+  render() {
+    return (
       <div className="footerContainer">
-      <a href="https://mierafm.github.io/Portfolio">
-        <span>Built By Mieraf M</span>
+        <a href="https://mierafm.github.io/Portfolio">
+          <span>Built By Mieraf M</span>
         </a>
       </div>
-    )}}
+    );
+  }
+}
 
-  export default Footer;
+export default Footer;

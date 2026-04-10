@@ -3,13 +3,13 @@
   margin: 0;
 }
 
-.appContainer{
+.appContainer {
   display: flex;
   flex-flow: column;
   /*just to see pink */
   background-color: black;
 }
-.loginContainer{
+.loginContainer {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -17,5 +17,4 @@
   height: 100%;
   /*yellow*/
   background-color: white;
-
 }

@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,900;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,900;1,900&display=swap");
 
-.footerContainer{
+.footerContainer {
   background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   padding: 1vh 1vw;
-
 }
-a{
+a {
   text-decoration: none;
   color: white;
   padding: 0px;
 }
-a:visited{
+a:visited {
   text-decoration: none;
   color: white;
 }
-a:hover{
+a:hover {
   text-decoration: underline;
 }
