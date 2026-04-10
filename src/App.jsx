@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { SpotifyAuth, Scopes } from 'react-spotify-auth';
-import { SpotifyApiContext } from 'react-spotify-api';
-
 import Cookies from 'js-cookie';
-import queryString from 'query-string';
 import 'react-spotify-auth/dist/index.css'
-import Home from './components/home.js';
-import Controller from './components/controller';
-import logo from './logo.svg';
+import Home from './components/home.jsx';
 import './App.css';
 
 const App = () => {
@@ -16,9 +11,6 @@ const App = () => {
     return (
       <div className="appContainer">
       {token ? (
-        //issue when trying to change this to controller
-        //<Controller props={token}/>
-
         <Home token={token}/>
       ) :(
         <div className="loginContainer">
@@ -27,17 +19,14 @@ const App = () => {
           </div>
           <div>
             <SpotifyAuth
-              //{/* t change css set btnClassName to something else*/}
               redirectUri={window.location}
-              clientID='5d25f8f76d5a41ff9f4e6414f25a47a5'
-              scopes={[Scopes.userReadPrivate, 'user-read-email', 'user-top-read', 'user-read-recently-played', 'user-library-read']} // either style will work
+              clientID={import.meta.env.VITE_SPOTIFY_CLIENT_ID}
+              scopes={[Scopes.userReadPrivate, 'user-read-email', 'user-top-read', 'user-read-recently-played', 'user-library-read']}
               onAccessToken={(token) => setToken(token)}
-
             />
           </div>
         </div>
       )}
-
       </div>
     )
   }
